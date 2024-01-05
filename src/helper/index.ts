@@ -11,6 +11,7 @@ export const getHeaderRes = async (): Promise<HeaderRes> => {
     referenceFieldPath: ["navigation_menu.page_reference"],
     jsonRtePath: ["notification_bar.announcement_text"],
   })) as HeaderRes[][];
+  // console.log('getHeaderRes response: ', response);
   liveEdit && addEditableTags(response[0][0], "header", true);
   return response[0][0];
 };
@@ -40,13 +41,16 @@ export const getPageRes = async (entryUrl: string): Promise<Page> => {
   const response = (await getEntryByUrl({
     contentTypeUid: "page",
     entryUrl,
-    referenceFieldPath: ["page_components.from_blog.featured_blogs"],
+    referenceFieldPath: ["page_components.from_blog.featured_blogs",
+      "page_components.section_with_products.product_reference"],
     jsonRtePath: [
       "page_components.from_blog.featured_blogs.body",
       "page_components.section_with_buckets.buckets.description",
       "page_components.section_with_html_code.description",
+      "page_components.section_with_products.product_reference"
     ],
   })) as Page[];
+  // console.log('getPageRes response: ', response);
   liveEdit && addEditableTags(response[0], "page", true);
   return response[0];
 };

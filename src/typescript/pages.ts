@@ -7,6 +7,7 @@ import {
   SectionWithCards,
   SectionWithBuckets,
   SectionWithHtmlCode,
+  SectionWithProducts,
 } from "./components";
 
 export type SEO = {
@@ -40,6 +41,7 @@ export type ComponentsProps = {
   section_with_cards: SectionWithCards;
   section_with_buckets: SectionWithBuckets;
   section_with_html_code: SectionWithHtmlCode;
+  section_with_products: SectionWithProducts;
 };
 export type Page = {
   $: Page;

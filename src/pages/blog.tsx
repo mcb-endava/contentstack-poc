@@ -40,7 +40,7 @@ export default function Blog({ entry }:{entry:({page, blogPost}:EntryProps)=> vo
 
   return (
     <>
-      {Object.keys(getEntry).length ? (
+      {Object?.keys(getEntry)?.length ? (
         <RenderComponents
           pageComponents={getEntry.page_components}
           blogsPage

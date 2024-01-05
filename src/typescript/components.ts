@@ -113,3 +113,17 @@ export type EntryProps = {
   blogPost?: BlogPostRes[];
   page?: Page[];
 };
+
+export type Product = {
+  title: string;
+  url: string;
+  description: string;
+  featured_image: Img[];
+  price: number;
+  call_to_action?: Link;
+  $: Product;
+};
+
+export type SectionWithProducts = {
+  product_reference: Product[];
+};

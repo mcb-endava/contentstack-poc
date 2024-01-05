@@ -18,6 +18,7 @@ export default function Footer({ footer, navMenu }: {footer: FooterRes, navMenu:
                 alt='contentstack logo'
                 title='contentstack'
                 className='logo footer-logo'
+                width={200}
               />
             ) : (
               <Skeleton width={100} />
