@@ -12,8 +12,8 @@ export default function ProductSection({
       {products?.map((product) => (
         <div className="featured-blog" key={product.title}>
           {product.featured_image && (
-            <div style={{ width: 'auto'}}>
-              <img
+            <div>
+              <img style={{ margin: 'auto', display: 'block'}}
               src={product.featured_image[0].url}
               alt={product.featured_image[0].filename}
               className="blog-post-img"

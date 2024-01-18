@@ -61,6 +61,7 @@ export type SectionWithCards = {
   cards: {
     title_h3: string;
     description: string;
+    image?: Img;
     call_to_action: Link;
     $: {
       title_h3: string;

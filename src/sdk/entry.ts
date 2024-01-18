@@ -30,6 +30,8 @@ const customHostBaseUrl = customHostUrl(
   REACT_APP_CONTENTSTACK_API_HOST as string
 );
 
+const OTHER_SUPPORTED_LOCALES = ['es-419'];
+
 // SDK initialization
 const Stack = initializeContentStackSdk();
 
@@ -76,6 +78,7 @@ export const getEntry = ({
   return new Promise((resolve, reject) => {
     const query = Stack.ContentType(contentTypeUid).Query();
     if (referenceFieldPath) query.includeReference(referenceFieldPath);
+    if (OTHER_SUPPORTED_LOCALES.includes(navigator.language)) query.addParam('locale', navigator.language);
     query
       .toJSON()
       .find()
@@ -113,7 +116,8 @@ export const getEntryByUrl = ({
 }: GetEntryByUrl) => {
   return new Promise((resolve, reject) => {
     const blogQuery = Stack.ContentType(contentTypeUid).Query();
-    if (referenceFieldPath) blogQuery.includeReference(referenceFieldPath);
+    if (referenceFieldPath) blogQuery.includeReference(referenceFieldPath)
+    if (OTHER_SUPPORTED_LOCALES.includes(navigator.language)) blogQuery.addParam('locale', navigator.language);
     blogQuery.toJSON();
     const data = blogQuery.where("url", `${entryUrl}`).find();
     data.then(

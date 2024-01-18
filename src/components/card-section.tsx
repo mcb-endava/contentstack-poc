@@ -8,6 +8,17 @@ export default function CardSection({ cards }: SectionWithCards) {
     <div className='demo-section'>
       {cards?.map((card) => (
         <div className='cards' key={card.title_h3}>
+          {card.image && (
+            <div style={{ height: '100px', marginBottom: '15px'}}>
+              <img 
+              style={{ objectFit: 'cover', width: '100%', height: '100%'}}
+              src={card.image.url}
+              alt={card.image.filename}
+              className="blog-post-img"
+              {...(card.image.$?.url as {})}
+              />
+            </div>
+          )}
           {card.title_h3 && <h3 {...card.$?.title_h3 as {}}>{card.title_h3}</h3>}
           {card.description && <p {...card.$?.description as {}}>{card.description}</p>}
           <div className='card-cta'>
