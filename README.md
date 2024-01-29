@@ -1,5 +1,8 @@
 # contentstack-poc
-POC project for ContentStack certification
+POC Project for ContentStack certification - Endava Recognition Program demo website
+
+![Screen Shot 2024-01-29 at 5 21 50 PM](https://github.com/mcb-endava/contentstack-poc/assets/101745796/7964a912-1639-4c3e-be23-c5098d24e1b7)
+
 
 
 [![Contentstack Logo](/public/contentstack.png)](https://www.contentstack.com/)
