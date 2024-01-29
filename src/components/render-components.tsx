@@ -11,6 +11,7 @@ import AboutSectionBucket from "./about-section-bucket";
 import SectionWithHtmlCode from "./section-with-html-code";
 import { ComponentsProps } from "../typescript/pages";
 import ProductSection from "./product-section";
+import ActivityCardSection from "./activity-card-section";
 
 type RenderComponentsProps ={
   pageComponents:ComponentsProps[]
@@ -89,6 +90,14 @@ export default function RenderComponents({ pageComponents, blogsPage, contentTyp
           return (
             <ProductSection
               product_reference={component.section_with_products.product_reference}
+              key={`component-${key}`}
+            />
+          );
+        }
+        if (component.section_with_activity_cards) {
+          return (
+            <ActivityCardSection
+              activities={component.section_with_activity_cards.activities}
               key={`component-${key}`}
             />
           );

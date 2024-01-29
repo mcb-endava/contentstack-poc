@@ -5,13 +5,12 @@ import { SectionWithProducts } from "../typescript/components";
 export default function ProductSection({
   product_reference: products,
 }: SectionWithProducts) {
-  console.log("ProductSection products: ", products);
 
   return (
     <div className="home-featured-blogs">
       {products?.map((product) => (
         <div className="featured-blog" key={product.title}>
-          {product.featured_image && (
+          {product.featured_image[0] && (
             <div>
               <img style={{ margin: 'auto', display: 'block'}}
               src={product.featured_image[0].url}

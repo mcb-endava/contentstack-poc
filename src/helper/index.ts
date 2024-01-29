@@ -42,12 +42,14 @@ export const getPageRes = async (entryUrl: string): Promise<Page> => {
     contentTypeUid: "page",
     entryUrl,
     referenceFieldPath: ["page_components.from_blog.featured_blogs",
-      "page_components.section_with_products.product_reference"],
+      "page_components.section_with_products.product_reference",
+      "page_components.section_with_activity_cards.activities"],
     jsonRtePath: [
       "page_components.from_blog.featured_blogs.body",
       "page_components.section_with_buckets.buckets.description",
       "page_components.section_with_html_code.description",
-      "page_components.section_with_products.product_reference"
+      "page_components.section_with_products.product_reference",
+      "page_components.section_with_activity_cards.activities"
     ],
   })) as Page[];
   // console.log('getPageRes response: ', response);

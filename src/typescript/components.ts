@@ -61,7 +61,6 @@ export type SectionWithCards = {
   cards: {
     title_h3: string;
     description: string;
-    image?: Img;
     call_to_action: Link;
     $: {
       title_h3: string;
@@ -125,6 +124,18 @@ export type Product = {
   $: Product;
 };
 
+export type Activity = {
+    title: string;
+    description: string;
+    image: Img;
+    call_to_action: Link;
+    $: Activity;
+};
+
 export type SectionWithProducts = {
   product_reference: Product[];
+};
+
+export type SectionWithActivityCards = {
+  activities: Activity[];
 };
